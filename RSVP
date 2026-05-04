@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wedding-rsvp-landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fcf7fb; --surface:#fffafb; --surface-2:#f6ecf4; --text:#2d1529; --muted:#6f546c;
+      --burgundy:#7b1e4f; --purple:#7c3a9b; --gold:#c6a250; --border:rgba(123,30,79,.14);
+      --shadow:0 20px 55px rgba(78,22,61,.12); --r:24px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Manrope,Arial,sans-serif;background:linear-gradient(180deg,#fffbfd,#f8edf6);color:var(--text)}
+    .wrap{max-width:900px;margin:auto;padding:32px 16px 72px}
+    .card{background:rgba(255,250,251,.96);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+    .hero{padding:44px 24px;background:linear-gradient(135deg,rgba(123,30,79,.95),rgba(124,58,155,.88));color:#fff;position:relative}
+    .hero:after{content:'';position:absolute;inset:16px;border:1px solid rgba(255,255,255,.18);border-radius:18px}
+    .tag{letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:#f6ddb1;margin-bottom:10px;position:relative;z-index:1}
+    h1,h2{font-family:'Cormorant Garamond',serif;margin:0;position:relative;z-index:1}
+    h1{font-size:52px;line-height:1}
+    .sub{max-width:44ch;margin-top:12px;color:rgba(255,255,255,.9);position:relative;z-index:1}
+    .content{padding:30px 24px 38px}
+    .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-bottom:28px}
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:20px}
+    .panel h2{font-size:32px;color:var(--burgundy);margin-bottom:8px}
+    .panel p{margin:0;color:var(--muted);line-height:1.65}
+    form{display:grid;gap:22px}
+    .section{background:linear-gradient(180deg,#fff,#fcf7fb);border:1px solid var(--border);border-radius:18px;padding:20px}
+    .section h2{font-size:30px;color:var(--burgundy);margin-bottom:8px}
+    .copy{margin:0 0 16px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+    input,select,textarea{width:100%;padding:14px 15px;border:1px solid rgba(45,21,41,.14);border-radius:14px;background:#fff;font:inherit;color:var(--text)}
+    textarea{min-height:100px;resize:vertical}
+    .radio-group{display:grid;gap:10px}
+    .opt{display:flex;gap:12px;align-items:center;padding:13px 14px;border:1px solid rgba(123,30,79,.12);border-radius:14px;background:#fff}
+    .opt input{width:18px;height:18px;accent-color:var(--burgundy)}
+    .tiny{font-size:14px;color:var(--muted)}
+    .cta{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px;border-radius:18px;background:linear-gradient(135deg,rgba(123,30,79,.08),rgba(198,162,80,.12));border:1px solid rgba(123,30,79,.12)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,var(--burgundy),var(--purple));color:#fff;font-weight:700}
+    @media(max-width:760px){h1{font-size:40px}.intro,.grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header class="hero">
+        <div class="tag">Ibukun Precious Adebayo & Peter Oluwafemi Kolawole</div>
+        <h1>RSVP & Celebration Reply</h1>
+        <p class="sub">A simplified romantic landing page for guests to confirm attendance, share table preference, and leave a short dietary note without overcrowding the invitation card.</p>
+      </header>
+      <div class="content">
+        <div class="intro">
+          <article class="panel">
+            <h2>With joy</h2>
+            <p>Please respond with your attendance so your place may be beautifully prepared for the wedding celebration on Saturday, September 12, 2026, in Ibadan. Wedding RSVP guidance commonly keeps forms short, usually centered on attendance, guest count, meal choice when needed, and optional dietary notes, so the experience stays quick for guests to complete. [web:77][web:80]</p>
+          </article>
+          <article class="panel">
+            <h2>For seating</h2>
+            <p>Seating plans are often organized around family groups, close friends, and special tables, while online RSVP pages can include table preference notes to help couples place guests more thoughtfully. [web:40][web:45][web:50]</p>
+          </article>
+        </div>
+        <form>
+          <section class="section">
+            <h2>Your details</h2>
+            <p class="copy">A few quick details to help us receive your response properly.</p>
+            <div class="grid">
+              <div><label>Full name</label><input placeholder="Enter your full name"></div>
+              <div><label>Phone or WhatsApp</label><input placeholder="0800 000 0000"></div>
+              <div><label>Email address</label><input placeholder="guest@example.com"></div>
+              <div><label>Family / group</label><input placeholder="Bride's family, Groom's friends, etc."></div>
+            </div>
+          </section>
+          <section class="section">
+            <h2>Attendance</h2>
+            <p class="copy">Kindly let us know if we may joyfully expect you.</p>
+            <div class="radio-group">
+              <label class="opt"><input type="radio" name="attend"><span>Graciously attending</span></label>
+              <label class="opt"><input type="radio" name="attend"><span>Unable to attend</span></label>
+            </div>
+          </section>
+          <section class="section">
+            <h2>Table preference</h2>
+            <p class="copy">Share where you would feel most comfortable seated during the celebration.</p>
+            <div class="radio-group">
+              <label class="opt"><input type="radio" name="table"><span>With bride's family</span></label>
+              <label class="opt"><input type="radio" name="table"><span>With groom's family</span></label>
+              <label class="opt"><input type="radio" name="table"><span>With friends / age group</span></label>
+              <label class="opt"><input type="radio" name="table"><span>No preference</span></label>
+            </div>
+            <div style="margin-top:14px"><label>People you would like to sit near</label><textarea placeholder="List names or family group here"></textarea></div>
+          </section>
+          <section class="section">
+            <h2>Dietary note</h2>
+            <p class="copy">To keep the page lighter, meal choices and restrictions have been reduced to one elegant optional note, which aligns with guidance to keep online RSVP forms brief and easy to complete. [web:77]</p>
+            <label>Allergies, restrictions, or meal note</label>
+            <textarea placeholder="Example: mild spice only, no seafood, vegetarian preferred"></textarea>
+            <p class="tiny">A short open text field is often enough for dietary restrictions and allergies on RSVP forms. [web:77]</p>
+          </section>
+          <section class="cta">
+            <div>
+              <h2 style="font-size:32px;color:var(--burgundy);margin-bottom:6px">Send your RSVP</h2>
+              <p class="tiny" style="margin:0">This sample keeps the public page clean and is ready to be hosted as a landing page before turning the live URL into a QR code for your invitation. [web:81][web:82][web:84]</p>
+            </div>
+            <a class="btn" href="mailto:POK2876@GMAIL.COM?subject=Wedding%20RSVP%20Submission&body=Full%20Name%3A%20%0APhone%20or%20WhatsApp%3A%20%0AEmail%20Address%3A%20%0AFamily%20or%20Group%3A%20%0AAttendance%3A%20%0ATable%20Preference%3A%20%0APeople%20to%20Sit%20Near%3A%20%0ADietary%20Note%3A%20">Submit RSVP</a>
+          </section>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
