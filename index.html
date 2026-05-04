@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibukun & Peter - Wedding RSVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --burgundy: #7B1E4F;
+            --purple: #7C3A9B;
+            --gold: #C9A961;
+            --cream: #FFFDFB;
+            --text-dark: #2D1B2E;
+            --border-light: #E8DDE5;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--purple) 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--cream);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(123, 30, 79, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--purple) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .monogram {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: var(--cream);
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--burgundy);
+            font-family: 'Cormorant Garamond', serif;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--cream);
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: rgba(255, 253, 251, 0.9);
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: var(--burgundy);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .wedding-details {
+            background: rgba(201, 169, 97, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .detail-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--burgundy);
+            min-width: 120px;
+            margin-right: 20px;
+        }
+
+        .detail-text {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .dress-code {
+            background: linear-gradient(135deg, rgba(123, 30, 79, 0.05) 0%, rgba(124, 58, 155, 0.05) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid var(--border-light);
+        }
+
+        .dress-code p {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .form-section {
+            background: var(--cream);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--burgundy);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            box-shadow: 0 0 0 3px rgba(123, 30, 79, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .meal-options,
+        .table-options,
+        .allergies-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: var(--burgundy);
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--purple) 100%);
+            color: var(--cream);
+            padding: 15px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(123, 30, 79, 0.3);
+        }
+
+        .footer {
+            background: var(--text-dark);
+            color: var(--cream);
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid var(--gold);
+        }
+
+        .footer-note {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .accommodations {
+            background: rgba(201, 169, 97, 0.08);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .accommodations h4 {
+            color: var(--burgundy);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .accommodations p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .accommodations a {
+            color: var(--burgundy);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .accommodations a:hover {
+            color: var(--purple);
+        }
+
+        .required {
+            color: var(--burgundy);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="monogram">IP</div>
+            <h1>Ibukun & Peter</h1>
+            <p>Together in love, united in celebration</p>
+        </div>
+
+        <div class="content">
+            <!-- Wedding Details Section -->
+            <div class="section">
+                <h2 class="section-title">Wedding Celebration</h2>
+                <div class="wedding-details">
+                    <div class="detail-item">
+                        <span class="detail-label">📅 Date</span>
+                        <span class="detail-text">Saturday, 12th September, 2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">⏰ Time</span>
+                        <span class="detail-text">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">📍 Venue</span>
+                        <span class="detail-text">Abimbola Center<br/>1 Baale Quarters, Beside First Line Gas<br/>Olodo Garage, Ibadan, Oyo State</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">👗 Dress Code</span>
+                        <div class="dress-code">
+                            <p><strong>Gele/Fila (Headwear) in Gold</strong></p>
+                            <p><strong>Attire in Lilac/Purple (matching our theme)</strong></p>
+                            <p style="margin-top: 10px; font-size: 13px; color: #666;">Embrace our luxury burgundy and purple theme with style and elegance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accommodations Section -->
+            <div class="section">
+                <h2 class="section-title">Recommended Accommodation</h2>
+                <div class="accommodations">
+                    <h4>Owu Crown Hotel</h4>
+                    <p><strong>Location:</strong> Km 5 Monatan Road, Ibadan, OY 23402</p>
+                    <p><strong>Phone:</strong> <a href="tel:+2348172175771">0817 217 5771</a></p>
+                    <p style="margin-top: 15px; font-size: 14px;">
+                        <strong>Direction from Lagos/Ibadan Expressway:</strong><br/>
+                        Exit the expressway towards Ibadan city center, follow signs to Monatan Road. Owu Crown Hotel is located 5km along this road, clearly marked.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RSVP Form Section -->
+            <div class="section">
+                <h2 class="section-title">RSVP</h2>
+                <form action="mailto:POK2876@GMAIL.COM?subject=Wedding RSVP Submission&body=Guest Attendance and Preferences" method="POST" enctype="text/plain">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests <span class="required">*</span></label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5+">5+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><span class="required">*</span> Will you be attending?</label>
+                        <div style="margin-top: 10px;" class="meal-options">
+                            <div class="checkbox-item">
+                                <input type="radio" id="attend-yes" name="attendance" value="Yes, I will be there!" required>
+                                <label for="attend-yes">Yes, I will be there!</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="attend-no" name="attendance" value="Regretfully, I cannot attend">
+                                <label for="attend-no">Regretfully, I cannot attend</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meal">Meal Preference <span class="required">*</span></label>
+                        <select id="meal" name="meal" required>
+                            <option value="">Select your preference...</option>
+                            <option value="Nigerian Cuisine">Nigerian Cuisine</option>
+                            <option value="International Cuisine">International Cuisine</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dietary Restrictions & Allergies</label>
+                        <div class="allergies-options">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="allergy-gluten" name="allergies" value="Gluten-free">
+                                <label for="allergy-gluten">Gluten-free</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="allergy-dairy" name="allergies" value="Dairy-free">
+                                <label for="allergy-dairy">Dairy-free</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="allergy-nuts" name="allergies" value="Nut allergy">
+                                <label for="allergy-nuts">Nut allergy</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="allergy-seafood" name="allergies" value="Seafood allergy">
+                                <label for="allergy-seafood">Seafood allergy</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietary-notes">Additional Dietary Notes</label>
+                        <textarea id="dietary-notes" name="dietary-notes" rows="3" placeholder="Please share any other dietary preferences or restrictions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="table">Table Seating Preference</label>
+                        <select id="table" name="table-preference">
+                            <option value="No preference">No preference</option>
+                            <option value="With Bride's Family">With Bride's Family</option>
+                            <option value="With Groom's Family">With Groom's Family</option>
+                            <option value="With Friends">With Friends</option>
+                            <option value="With Couple">Near the Couple</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="seating-notes">People You'd Like to Sit Near</label>
+                        <textarea id="seating-notes" name="seating-notes" rows="2" placeholder="List any guests you'd like to sit with..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-notes">Special Requests or Messages</label>
+                        <textarea id="special-notes" name="special-notes" rows="3" placeholder="Share any special wishes or requests..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Your RSVP</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-note">
+                <strong>We look forward to celebrating with you!</strong><br/>
+                Please RSVP by August 30th, 2026<br/>
+                Questions? Contact us via email
+            </p>
+            <p style="font-size: 12px; opacity: 0.8;">
+                With love and joy,<br/>
+                Ibukun & Peter
+            </p>
+        </div>
+    </div>
+</body>
+</html>
