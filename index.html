@@ -800,8 +800,8 @@ footer .footer-meta{
         </div>
 
         <div class="field">
-          <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-          <input class="input" id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
         </div>
 
         <div class="field">
@@ -1056,7 +1056,7 @@ footer .footer-meta{
 
   function validate(){
     var ok = true;
-    var requiredFields = ['fullName','email'];
+    var requiredFields = ['fullName'];
     for (var i=0;i<requiredFields.length;i++){
       var f = FORM.elements[requiredFields[i]];
       if (!f.value.trim()) { f.focus(); showStatus('err','Please fill in your '+requiredFields[i]+'.'); return false; }
@@ -1069,7 +1069,7 @@ footer .footer-meta{
     }
     // Naive email format check
     var emailVal = val('email');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
+    if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
       showStatus('err','Please enter a valid email address.');
       FORM.elements['email'].focus();
       return false;
